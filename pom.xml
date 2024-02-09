@@ -12,6 +12,7 @@
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
         <version.log>2.17.2</version.log>
+        <version.junit>5.10.0</version.junit>
     </properties>
 
     <dependencies>
@@ -19,7 +20,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.10.0</version>
+            <version>${version.junit}</version>
             <scope>test</scope>
         </dependency>
 
@@ -46,6 +47,13 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
             <version>${version.log}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${version.junit}</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
