@@ -1,5 +1,7 @@
+import edu.emory.mathcs.backport.java.util.concurrent.TimeUnit;
+
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+//import java.util.concurrent.TimeUnit;
 
 public class Main {
 
@@ -19,6 +21,7 @@ public class Main {
             hippodrome.move();
             watch(hippodrome);
             TimeUnit.MILLISECONDS.sleep(200);
+            //Thread.sleep(200);
         }
 
         String winnerName = hippodrome.getWinner().getName();

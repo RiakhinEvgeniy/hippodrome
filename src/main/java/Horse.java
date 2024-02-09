@@ -1,12 +1,19 @@
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import static java.util.Objects.isNull;
 
 public class Horse {
+
+   // private static final Logger log = LoggerFactory.getLogger(Horse.class);
 
     private final String name;
     private final double speed;
     private double distance;
 
     public Horse(String name, double speed, double distance) {
+        //log.debug("Constructor");
         if (isNull(name)) {
             throw new IllegalArgumentException("Name cannot be null.");
         } else if (name.isBlank()) {
