@@ -42,5 +42,14 @@ class HippodromeTest {
         Assertions.assertEquals("Horses cannot be empty.", message);
     }
 
-    
+    @Test
+    void getHorsesTestSameObjectsAndSequence() {
+        List<Horse> horses = new ArrayList<>();
+        for (int i = 0; i < 30; i++) {
+            horses.add(new Horse("#" + i, i, i));
+        }
+
+        Hippodrome hippodrome = new Hippodrome(horses);
+        Assertions.assertEquals(horses, hippodrome.getHorses());
+    }
 }
