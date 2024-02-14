@@ -1,10 +1,12 @@
+import edu.emory.mathcs.backport.java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class HippodromeTest {
 
@@ -51,5 +53,40 @@ class HippodromeTest {
 
         Hippodrome hippodrome = new Hippodrome(horses);
         Assertions.assertEquals(horses, hippodrome.getHorses());
+    }
+
+    @Test
+    void moveInvokeHorseMethodMove() {
+        List<Horse> horses = new ArrayList<>();
+        for (int i = 0; i < 50; i++) {
+            horses.add(Mockito.mock(Horse.class));
+        }
+
+        new Hippodrome(horses).move();
+
+        for (Horse horse : horses) {
+            Mockito.verify(horse).move();
+        }
+    }
+
+    @Test
+    void getWinner() {
+        List<Horse> horses = new ArrayList<>();
+        horses.add(new Horse("horse1", 2, 3));
+        horses.add(new Horse("horse2", 2, 10));
+        horses.add(new Horse("horse3", 2, 8));
+        Hippodrome hippodrome = new Hippodrome(horses);
+
+        Horse winner = hippodrome.getWinner();
+
+        Assertions.assertEquals("horse2", winner.getName());
+    }
+
+    @Disabled
+    @Test
+    @Timeout(value = 22)
+    void mainTestTime() throws Exception {
+        String[] str = new String[0];
+        Main.main(str);
     }
 }
