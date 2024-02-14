@@ -1,4 +1,3 @@
-import edu.emory.mathcs.backport.java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -80,13 +79,5 @@ class HippodromeTest {
         Horse winner = hippodrome.getWinner();
 
         Assertions.assertEquals("horse2", winner.getName());
-    }
-
-    @Disabled
-    @Test
-    @Timeout(value = 22)
-    void mainTestTime() throws Exception {
-        String[] str = new String[0];
-        Main.main(str);
     }
 }
