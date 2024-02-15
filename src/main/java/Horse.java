@@ -33,7 +33,7 @@ public class Horse {
         this.speed = speed;
         this.distance = distance;
 
-        log.debug("Создание Horse, имя [Лобстер], скорость [2.8]");
+        log.debug("Создание Horse, имя " + name + " скорость " + speed);
     }
 
     public Horse(String name, double speed) {

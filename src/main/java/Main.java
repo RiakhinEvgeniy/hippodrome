@@ -25,7 +25,7 @@ public class Main {
         for (int i = 0; i < 100; i++) {
             hippodrome.move();
             watch(hippodrome);
-            TimeUnit.MILLISECONDS.sleep(200);
+            TimeUnit.MILLISECONDS.sleep(10);
             //Thread.sleep(200);
         }
 
