@@ -6,8 +6,8 @@
             <PatternLayout pattern="%d{DEFAULT} %-5level %logger{36} : %msg%n"/>
         </Console>
 
-        <RollingFile name="RollingFile" fileName="logs/hippodrome.log"
-                     filePattern="logs/hippodrome.%d{yyyy-MM-dd}.log">
+        <RollingFile name="RollingFile" fileName="logs\hippodrome.log"
+                     filePattern="logs\hippodrome.log.%d{yyyy-MM-dd}.log">
             <PatternLayout pattern="%d{DEFAULT} %-5level %logger{36} : %msg%n" />
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true" />
